@@ -4,476 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7-Day FREE Grammar Mastery Class</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #4361ee;
-            --primary-light: #4895ef;
-            --secondary: #f72585;
-            --accent: #4cc9f0;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --gray: #6c757d;
-            --success: #38b000;
-            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        body {
-            line-height: 1.7;
-            color: var(--dark);
-            background-color: var(--light);
-            overflow-x: hidden;
-        }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            color: white;
-            padding: 4rem 0 6rem;
-            text-align: center;
-            clip-path: ellipse(120% 100% at 50% 0%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 Q50,80 0,100 Z"></path></svg>');
-            background-size: 100% 50px;
-            background-repeat: repeat-x;
-            background-position: bottom;
-        }
-        
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        h2 {
-            color: var(--primary);
-            margin: 2rem 0 1.5rem;
-            font-size: 2rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 50px;
-            height: 4px;
-            background: var(--secondary);
-            border-radius: 2px;
-        }
-        
-        .tagline {
-            font-size: 1.6rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .highlight {
-            font-weight: 600;
-            color: var(--secondary);
-            position: relative;
-        }
-        
-        .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--accent);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.3s ease;
-        }
-        
-        .highlight:hover::after {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-        
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(to right, var(--secondary), #ff4d8d);
-            color: white;
-            padding: 16px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            margin: 2rem 0;
-            transition: var(--transition);
-            box-shadow: var(--box-shadow);
-            position: relative;
-            overflow: hidden;
-            border: none;
-            font-size: 1.1rem;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(247, 37, 133, 0.3);
-        }
-        
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
-        }
-        
-        .cta-button:hover::before {
-            left: 100%;
-        }
-        
-        .benefits, .why-us {
-            background-color: white;
-            padding: 3rem;
-            border-radius: 15px;
-            margin-bottom: 3rem;
-            box-shadow: var(--box-shadow);
-            position: relative;
-            overflow: hidden;
-            transition: var(--transition);
-        }
-        
-        .benefits:hover, .why-us:hover {
-            transform: translateY(-5px);
-        }
-        
-        .benefits::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary), var(--accent));
-        }
-        
-        ul {
-            padding-left: 1.5rem;
-            margin-bottom: 1rem;
-            list-style-type: none;
-        }
-        
-        li {
-            margin-bottom: 1rem;
-            position: relative;
-            padding-left: 35px;
-        }
-        
-        li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: var(--success);
-            font-weight: bold;
-            background: rgba(56, 176, 0, 0.1);
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .date-box {
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            margin: 3rem 0;
-            font-size: 1.4rem;
-            box-shadow: var(--box-shadow);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .date-box::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            transform: rotate(30deg);
-            animation: shine 3s infinite linear;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 3rem 0;
-            color: var(--gray);
-            font-size: 0.9rem;
-            background-color: white;
-            margin-top: 3rem;
-            clip-path: ellipse(120% 100% at 50% 100%);
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        .emoji {
-            font-size: 1.5rem;
-            margin-right: 8px;
-            vertical-align: middle;
-        }
-        
-        .floating {
-            animation: floating 3s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        @keyframes shine {
-            to {
-                transform: translateX(100%) rotate(30deg);
-            }
-        }
-        
-        /* Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animated {
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-        }
-        
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
-        .delay-4 { animation-delay: 0.8s; }
-        
-        /* Floating elements */
-        .floating-1 {
-            position: absolute;
-            top: 20%;
-            left: 5%;
-            width: 60px;
-            height: 60px;
-            background: rgba(76, 201, 240, 0.3);
-            border-radius: 50%;
-            filter: blur(10px);
-            animation: floating 6s ease-in-out infinite;
-        }
-        
-        .floating-2 {
-            position: absolute;
-            bottom: 10%;
-            right: 5%;
-            width: 80px;
-            height: 80px;
-            background: rgba(247, 37, 133, 0.2);
-            border-radius: 50%;
-            filter: blur(10px);
-            animation: floating 5s ease-in-out infinite reverse;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .tagline {
-                font-size: 1.3rem;
-            }
-            
-            header {
-                padding: 3rem 0 4rem;
-                clip-path: ellipse(150% 100% at 50% 0%);
-            }
-            
-            .benefits, .why-us {
-                padding: 2rem;
-            }
-            
-            .date-box {
-                font-size: 1.2rem;
-                padding: 1.5rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-            
-            h2 {
-                font-size: 1.6rem;
-            }
-            
-            .tagline {
-                font-size: 1.1rem;
-            }
-            
-            .cta-button {
-                padding: 14px 30px;
-                font-size: 1rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="floating-1"></div>
-        <div class="floating-2"></div>
         <div class="container">
-            <h1 class="animated"><span class="emoji">✍️</span>Tired of making grammar mistakes?</h1>
-            <p class="tagline animated delay-1">Let's fix that—in just <span class="highlight">7 days</span>, completely <span class="highlight">FREE</span>.</p>
+            <h1>Tired of making grammar mistakes?</h1>
+            <p class="tagline">Let's fix that—in <span class="highlight">7 days, for free</span>.</p>
         </div>
     </header>
     
-    <main class="container">
-        <section class="intro animated delay-1">
-            <p class="text-center" style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem;">We're offering a <strong>7-day FREE grammar class</strong> to help you write with confidence—whether you're in school, at work, or just want to sound more professional.</p>
-        </section>
-        
-        <section class="benefits animated delay-2">
-            <h2>Here's what you'll get:</h2>
-            <ul>
-                <li><strong>Daily lessons</strong> that are short, simple, and practical</li>
-                <li><strong>Common grammar mistakes</strong> explained (and how to avoid them)</li>
-                <li><strong>Real tips</strong> you can use immediately in writing and speaking</li>
-                <li>A <strong>friendly teacher</strong>, not a boring textbook</li>
-                <li><strong>Interactive exercises</strong> to practice what you learn</li>
-                <li><strong>Lifetime access</strong> to all course materials</li>
-            </ul>
-        </section>
-        
-        <section class="why-us animated delay-2">
-            <h2>Why choose our class?</h2>
-            <p>We've helped <strong>hundreds of students</strong> improve their grammar and communication skills using our simple, results-first method. This free trial is your chance to experience our teaching style—with <strong>zero pressure</strong> and <strong>no commitment</strong>.</p>
-            <p style="margin-top: 1rem;">Our students have gone on to write better essays, craft more professional emails, and speak with greater confidence in their daily lives.</p>
-        </section>
-        
-        <div class="date-box animated delay-3">
-            <p><span class="emoji">⏰</span> Class starts tomorrow <span class="highlight">14th April 2025 at 8:00 PM</span> sharp!</p>
+    <div class="container">
+        <div class="main-content">
+            <p>We're offering a 7-day FREE grammar class to help you write with confidence—whether you're in school, at work, or just want to sound more professional.</p>
+            
+            <div class="benefits">
+                <h2>Here's what you'll get:</h2>
+                <ul>
+                    <li>Daily lessons that are short, simple, and practical</li>
+                    <li>Common grammar mistakes explained (and how to avoid them)</li>
+                    <li>Real tips you can use immediately in writing and speaking</li>
+                    <li>A friendly teacher, not a boring textbook</li>
+                </ul>
+            </div>
+            
+            <div class="why-us">
+                <h2>Why us?</h2>
+                <p>We've helped hundreds of students improve their grammar and communication skills using a simple, results-first method. This free trial is a chance to experience our teaching style—with zero pressure.</p>
+                
+                <div class="testimonial">
+                    "This class transformed my writing! I went from making embarrassing mistakes to feeling confident in my emails and reports."
+                    <div class="testimonial-author">— Sarah K., Former Student</div>
+                </div>
+            </div>
+            
+            <div class="counter" id="countdown">
+                <div class="counter-item">
+                    <span class="counter-value" id="days">00</span>
+                    <span class="counter-label">Days</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-value" id="hours">00</span>
+                    <span class="counter-label">Hours</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-value" id="minutes">00</span>
+                    <span class="counter-label">Minutes</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-value" id="seconds">00</span>
+                    <span class="counter-label">Seconds</span>
+                </div>
+            </div>
         </div>
         
-        <div class="text-center animated delay-4">
-            <p style="font-size: 1.3rem; margin-bottom: 1.5rem;"><strong>Spaces are limited — Don't miss out!</strong></p>
-            <a href="https://chat.whatsapp.com/ChcAkF8V6Gz8OyrzSWBsfs" class="cta-button">
-                <span class="emoji">🚀</span> Join the FREE Class Now
-            </a>
-            <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--gray)">No credit card required • Cancel anytime</p>
+        <div class="cta-section">
+            <h2>Class starts tomorrow!</h2>
+            <div class="date-time">14th April 2025 at 8:00 PM sharp</div>
+            <p>Don't miss this opportunity to improve your grammar in just one week!</p>
+            <button class="cta-button pulse" id="joinButton">Click here to join the class</button>
         </div>
-    </main>
+    </div>
     
-    <footer class="animated delay-4">
-        <div class="container">
-            <p>© 2025 Grammar Mastery Class. All rights reserved.</p>
-        </div>
+    <footer>
+        <p>Limited spots available. Join now to secure your place in the class.</p>
     </footer>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Enhanced intersection observer with staggered animations
-            const animatedElements = document.querySelectorAll('.animated');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.animationPlayState = 'running';
-                    }
-                });
-            }, { 
-                threshold: 0.1,
-                rootMargin: '0px 0px -100px 0px'
-            });
-            
-            animatedElements.forEach(element => {
-                element.style.opacity = 0;
-                element.style.animationPlayState = 'paused';
-                observer.observe(element);
-            });
-            
-            // Dynamic date update with better formatting
-            const today = new Date();
-            const tomorrow = new Date(today);
-            tomorrow.setDate(today.getDate() + 1);
-            
-            const options = { day: 'numeric', month: 'long', year: 'numeric' };
-            const formattedDate = tomorrow.toLocaleDateString('en-US', options);
-            
-            const dateElement = document.querySelector('.date-box p');
-            if (dateElement) {
-                dateElement.innerHTML = `<span class="emoji">⏰</span> Class starts tomorrow <span class="highlight">${formattedDate} at 8:00 PM</span> sharp!`;
-            }
-            
-            // Add hover effect to all highlights
-            const highlights = document.querySelectorAll('.highlight');
-            highlights.forEach(highlight => {
-                highlight.addEventListener('mouseenter', function() {
-                    this.style.color = var(--accent);
-                });
-                highlight.addEventListener('mouseleave', function() {
-                    this.style.color = var(--secondary);
-                });
-            });
-            
-            // Button click animation
-            const ctaButton = document.querySelector('.cta-button');
-            if (ctaButton) {
-                ctaButton.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    this.classList.add('clicked');
-                    setTimeout(() => {
-                        window.location.href = this.href;
-                    }, 300);
-                });
-            }
-        });
-    </script>
+    <script src="action.js" ></script>
 </body>
 </html>
